@@ -1,0 +1,161 @@
+\usepackage{setspace}
+    \onehalfspacing
+\usepackage{lipsum}
+\usepackage{lettrine}
+% \usepackage{xifthen}
+\usepackage{enumitem}
+\usepackage{fancyvrb}
+% \newboolean{answer}
+% \setboolean{answer}{false}
+\usepackage{wrapfig}
+\usepackage{marvosym}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{color, fancybox}
+\usepackage{epstopdf}
+% \usepackage[ansinew]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dcolumn}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{tikz, ifthen}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{arrows,calc,intersections,pgfplots.fillbetween}
+\tikzset{
+	%Define standard arrow tip
+	>=stealth',
+	%Define style for different line styles
+	help lines/.style={dashed, thick},
+	axis/.style={<->},
+	important line/.style={thick},
+	connection/.style={thick, dotted},
+}
+
+%% Custom: TikZit drawing package
+\usepackage{tikz/tikzit}
+\input{tikz/style01.tikzstyles}
+\usepackage{relsize}
+\usepackage{pythonhighlight}
+\setcounter{MaxMatrixCols}{10}
+\ifx\pdfoutput\undefined
+    \usepackage[backref=none,colorlinks,urlcolor=blue,citecolor = dullmagenta,linkcolor=blue]{hyperref}
+\else
+    \usepackage[backref=page,pdftex,hypertexnames=false,colorlinks,urlcolor = dullmagenta!50!orange,citecolor=sangre,linkcolor=blue]{hyperref}
+\fi
+\usepackage[colorinlistoftodos,shadow]{todonotes}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{marginnote}
+
+%% START CUSTOM ENVIRONMENT
+%%-----------------------------------------------
+%% DRAFT WARNING
+\ifthenelse{\boolean{answer}}{
+	\thisfancyput(4cm,-19cm){\Huge\bfseries\textcolor{red}{\rotatebox{45}{DO NOT DISTRIBUTE}}}
+}{}
+
+%% INSTRUCTORS solution boxes
+%% --------------------------
+% Use for creating answer key boxes (requires fancybox) version of this exam:
+\newenvironment{abox}[2][\textbf{Answer Key $\triangleright$}]{\shadowbox{\begin{minipage}[b]{0.99\linewidth} #1 {\color{blue}#2} \ $\hfill \rule{0.5em}{0.5em}\blacktriangleleft$ \end{minipage}}}{}
+
+% Indented version of abox
+\newenvironment{dbox}[2][\textbf{Answer Key $\triangleright$}]{\shadowbox{\begin{minipage}[b]{0.85\linewidth} #1 {\color{blue}#2} \ $\hfill \rule{0.5em}{0.5em}\blacktriangleleft$ \end{minipage}}}{}
+
+
+% Indented version of abox - student reply box
+% --------------------------------------------
+\newenvironment{namebox}[2][\textbf{Do not leave blank! $\triangleright$}]{\shadowbox{\begin{minipage}[b]{0.9\linewidth} #1 #2 \end{minipage}}}{}
+
+\newenvironment{rbox}[2][\textbf{Your derivation and/or explanation: $\triangleright$}]{\shadowbox{\begin{minipage}[b]{0.98\linewidth} #1 {\color{blue}#2} \ $\hfill \rule{0.5em}{0.5em}\blacktriangleleft$ \end{minipage}}}{}
+
+% Use for creating Instruction boxes (requires fancybox) version of this exam:
+% -----------------------------------------------------------------------------
+\newenvironment{ibox}[2][\textbf{Instructions $\triangleright$}]{\shadowbox{\begin{minipage}[b]{0.9\linewidth} #1 #2 \end{minipage}}}{}
+
+%% MCQ answer tag
+\newcommand{\mcqtrue}{\ifthenelse{\boolean{answer}}{\hfill{\color{red}\bfseries[ ANSWER ]}}}
+
+% Custom To Do Notes
+\newcommand{\smalltodo}[2][]{\todo[caption={#2}, #1]{\begin{spacing}{0.8}#2\end{spacing}}} % Tighten spacing
+
+% Ordered To Do Note list
+	\newcounter{todocounter}
+	\newcommand{\todonum}[2][]
+	{\stepcounter{todocounter}\todo[#1]{\thetodocounter: #2}}
+
+% Math shortcuts
+\def\bigcon{\bigg{|}}
+\newcommand{\mb}{\mathbf}
+\newcommand{\mbb}{\mathbb}
+\newcommand{\mcl}{\mathcal}
+\newcommand{\R}{\mbb{R}}
+\newcommand{\N}{\mbb{N}}
+\newcommand{\Z}{\mbb{Z}}
+\newcommand{\E}{\mbb{E}}
+\newcommand{\EE}{\widetilde{\mbb{E}}}
+\newcommand{\diff}{\text{d}}
+%% Custom def on the fly! ----------
+\def\trho{\tilde{\rho}}
+
+% Color definitions
+\definecolor{gray}{rgb}{0.541,0.588,0.639}
+\definecolor{sangre}{rgb}{0.6,0.18,0.19}
+\definecolor{dullmagenta}{rgb}{0.4,0,0.4}
+\definecolor{darkblueroyale}{rgb}{0,0,0.6}
+\definecolor{verdeprofundo}{rgb}{0.02,0.376,0.031}
+\definecolor{aqua}{rgb}{0.0, 1.0, 1.0}
+
+% List shortcuts
+\newcommand{\pse}{\pause}
+\newcommand{\bol}{\begin{enumerate}}
+\newcommand{\eol}{\end{enumerate}}
+\newcommand{\bul}{\begin{itemize}}
+\newcommand{\eul}{\end{itemize}}
+\newcommand{\li}{\item}
+
+% Equation environmemt
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+
+% Custom
+% \def\wattle{\texttt{WATTLE}}
+\def\canvas{\texttt{Canvas}}
+
+
+
+% Custom To Do Notes
+
+%\newcommand{\smalltodo}[2][]{\todo[caption={#2}, #1]{\begin{spacing}{0.8}#2\end{spacing}}} % Tighten spacing
+%
+%% Ordered To Do Note list
+%	\newcounter{todocounter}
+%	\newcommand{\todonum}[2][]
+%	{\stepcounter{todocounter}\todo[#1]{\thetodocounter: #2}}

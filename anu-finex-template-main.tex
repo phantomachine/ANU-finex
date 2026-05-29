@@ -1,0 +1,178 @@
+\documentclass[12pt,fleqn,a4paper]{article}
+
+%% ANUfinalexam3.tex
+%%
+%% Template for creating exams following the ANU Exams Office layout definitions. This version: May 28, 2026.
+%%
+%% Version 2 - Last update: October 31, 2008. 
+%% (changes to footer style to follow changes at ANU Exams Office)
+%%
+%% First version: 
+%%  http://www.ctan.org/tex-archive/help/Catalogue/entries/anufinalexam.html 
+%% (now obsolete)
+
+%% FONTS for Access and Inclusivity =========================================
+    %% Arial is not installed in TeX Live. Use helvet package instead.
+    \usepackage{helvet}
+
+    \renewcommand{\familydefault}{\sfdefault}
+
+    %% Use sans serif math font as well
+    %% (not very good, but better than default)
+    \usepackage[cm]{sfmath}                  
+%% FONTS for Access and Inclusivity =========================================
+
+%% USER OPTION - Set as TRUE to render marking scheme and model answers. 
+\usepackage{xifthen}
+\newboolean{answer}
+\setboolean{answer}{false}
+
+%% Included packages
+\input{anu-exam-settings}
+
+
+
+%%% USER DEFINED MACROS AND ENVIRONMENTS ==============================
+    \newcommand{\institution}{THE AUSTRALIAN NATIONAL UNIVERSITY}
+    \newcommand{\department}{Research School of Photography}
+
+    %% Course details
+    \newcommand{\examcode}{FOTO 7788}
+    \newcommand{\titlehd}{Professorial Photography}
+
+    %% Exam details
+    \newcommand{\examtype}{Final Examination}
+    \newcommand{\semester}{Semester 1}
+    \newcommand{\semtype}{End of Semester}
+    \newcommand{\examdate}{2026}
+    \newcommand{\readtime}{15 Minutes}
+    \newcommand{\writetime}{480 Minutes}
+
+    %% Permitted materials:
+    \newcommand{\materialA}{NONE Permitted!}
+    \newcommand{\materialB}{}
+    \newcommand{\materialC}{}
+
+    % Exam-hall supplied materials:
+    \newcommand{\suppliedmaterials}{
+        \begin{itemize}
+            \item 1 $\times$ 10 page
+            \item Multiple Choice Answer Sheet
+        \end{itemize}
+    }
+
+    % Instructions to students:
+    \newcommand{\specialstuff}{\small
+        \begin{itemize}
+            \item Do not remove this document from the examination hall.
+        \end{itemize}
+    }
+%%% END: USER DEFINED MACROS AND ENVIRONMENTS =============================
+
+%%% STANDARD EXAM LAYOUT ==================================================
+    \pagestyle{fancy}
+    
+    \lhead{}
+    \chead{}
+    % \rhead{\PointingHand \ Your ANU-ID: u\boxed{\color{white}ABC7778eroih59-} }
+    \lfoot{\footnotesize{\sffamily \semester - \semtype, \examdate}}
+    \cfoot{\footnotesize{\sffamily Page \thepage \ of \pageref{finalpage}}}
+    \rfoot{\footnotesize{\sffamily \examcode \ \titlehd}}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    \newcommand{\lastwords}{End of \examtype}
+
+    % Marks distribution:
+    \newenvironment{markdist}[2][]{\hfill$\langle$ \textbf{#2}\textbf{\%} $\rangle$ }
+
+    % Flushed left
+    \newenvironment{markdistfleft}[2][]{ $\langle$ \textbf{#2}\textbf{\%} $\rangle$\hfill }
+%%% END: STANDARD EXAM LAYOUT ===============================================
+
+
+\begin{document}
+
+    % Title page
+    % =========================================
+    \input{coverpage.tex}
+
+
+
+    \newpage
+
+    %% ==================================
+    \begin{center}
+        {\Large\bfseries{--- Part A ---}}
+
+        \begin{quote}
+            \textbf{WARNING!} Enter your answer choices from this section into the multiple-choice answer sheet/form provided. Use 2B (dark) pencils only. Don't forget to enter your name and ID number on that form as well! Failure to read, comprehend and comply with these instructions is wholly your responsibility and will result in loss of marks in this section. Answer all questions in this section.
+        \end{quote}
+    \end{center}
+
+    % \vspace{2cm}
+    % ==================================
+    \ibox{
+        Write modular questions in separate files and input them here. For example, you can write all multiple-choice questions in a separate file and input it here as follows:
+    }
+        \begin{verbatim}
+            \input{questions/mcq-ex1.tex}
+        \end{verbatim}
+
+    \input{questions/mcq-ex1.tex}
+
+    \newpage
+    %% ==================================
+    \begin{center}
+        {\Large\bfseries{--- Part B ---}}
+
+        \begin{quote}
+            \textbf{WARNING!} Answer all questions in this section. Write your answers using the official script books provided. You should use \emph{at most two pages per sub-question} below. Answers that are too long, irrelevant or do not directly address the question will attract penalty points.
+        \end{quote}
+
+    \end{center}
+
+   %%--------------------------------------------------------------------
+    \renewcommand{\thesection}{B}
+    \setcounter{equation}{0}
+
+		\paragraph{\textbf{Question \thesection.1 \ (40\%)}}
+		%%---------------------------------------------------------------
+
+        \
+
+        \ibox{
+            Here, you can write a question in a separate file and input it here. For example, you can write the question in a file called \texttt{anu-finex-question-ex1.tex} and input it here as follows: 
+        }
+        \begin{verbatim}
+		    \input{questions/anu-finex-question-ex1.tex}
+        \end{verbatim}
+    
+        \input{questions/anu-finex-question-ex1.tex}
+    
+        \newpage
+        
+
+        \paragraph{\textbf{Question \thesection.2 \ (40\%)}}
+        %%--------------------------------------------------------------
+        \begin{verbatim}
+		    \input{questions/fire-drill.tex} 
+        \end{verbatim}
+
+    
+    \newpage
+    \section*{Appendix}
+
+        \begin{verbatim}
+            \input{appendix-models.tex}
+        \end{verbatim}
+
+
+
+
+    \begin{center}
+    \vfill
+    --------- \textit{\lastwords} ---------
+    \label{finalpage}
+    \end{center}
+
+\end{document}
