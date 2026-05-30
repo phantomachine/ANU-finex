@@ -1,0 +1,58 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-8, 7) {};
+		\node [style=none] (1) at (-8, -4) {};
+		\node [style=none] (2) at (5, -4) {};
+		\node [style=none] (3) at (-8, 7) {};
+		\node [style=none] (4) at (-8, 7) {};
+		\node [style=none] (5) at (-7.75, 7.5) {Flows: saving,  outflows};
+		\node [style=none] (9) at (5.5, -4) {$k$};
+		\node [style=none] (15) at (-8, -4) {};
+		\node [style=none] (16) at (2.5, 7) {};
+		\node [style=none] (19) at (0.75, 6) {$a$};
+		\node [style=none] (31) at (-8.5, -4.5) {};
+		\node [style=none] (32) at (-8.5, -4.5) {$0$};
+		\node [style=none] (33) at (-8, -4) {};
+		\node [style=none] (34) at (2.5, 5.75) {};
+		\node [style=none] (37) at (3.75, 5.75) {$sk^{\alpha}$};
+		\node [style=none] (43) at (-8, -4) {};
+		\node [style=none] (46) at (3.5, 7) {$(n+d+g)k$};
+		\node [style=none] (50) at (0.75, 5.25) {};
+		\node [style=none] (51) at (0.75, -4) {};
+		\node [style=none] (52) at (-8, 5.25) {};
+		\node [style=blue circle] (58) at (0.75, 5.25) {};
+		\node [style=none] (59) at (-0.5, 4.75) {};
+		\node [style=none] (60) at (-1, 5.5) {};
+		\node [style=none] (61) at (-8, -4) {};
+		\node [style=none] (62) at (1.75, 7) {};
+		\node [style=none] (63) at (-8, -4) {};
+		\node [style=none] (64) at (-2, 7.25) {};
+		\node [style=none] (65) at (-8, -4) {};
+		\node [style=none] (66) at (-5.5, 7.5) {};
+		\node [style=none] (67) at (0.25, 7.25) {};
+		\node [style=none] (68) at (0.25, 7.25) {$sk^{\alpha'}$};
+		\node [style=none] (69) at (-2.75, 7.5) {};
+		\node [style=none] (70) at (-2.75, 7.5) {$sk^{\alpha''}$};
+		\node [style=none] (71) at (-5.25, 7.5) {};
+		\node [style=none] (72) at (-5.25, 7.5) {$sk$};
+		\node [style=none] (73) at (-1.5, 5.75) {};
+		\node [style=none] (74) at (-2.5, 6.25) {};
+		\node [style=none] (75) at (-3.25, 6.5) {};
+		\node [style=none] (76) at (-5.5, 6.5) {};
+		\node [style=none] (77) at (-2.5, 6.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0.center) to (1.center);
+		\draw (1.center) to (2.center);
+		\draw [style=green edge] (15.center) to (16.center);
+		\draw [style=orange solid, bend left, looseness=0.75] (33.center) to (34.center);
+		\draw [style=grey dashed] (50.center) to (51.center);
+		\draw [style=grey dashed] (50.center) to (52.center);
+		\draw [style=shellpink arrow, bend right=15] (59.center) to (60.center);
+		\draw [style=grey dashed, bend left] (61.center) to (62.center);
+		\draw [style=grey dashed, bend left=15] (63.center) to (64.center);
+		\draw [style=new edge style 0] (65.center) to (66.center);
+		\draw [style=shellpink arrow, bend right=15, looseness=1.25] (73.center) to (77.center);
+		\draw [style=shellpink arrow, bend left=345] (75.center) to (76.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

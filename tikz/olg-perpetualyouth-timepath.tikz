@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-8, 0) {};
+		\node [style=none] (1) at (-8, 7.25) {};
+		\node [style=none] (2) at (7, 0) {};
+		\node [style=none] (3) at (-8, 0) {};
+		\node [style=none] (4) at (-8, 1.25) {};
+		\node [style=none] (5) at (-8, 6) {};
+		\node [style=none] (6) at (6, 6) {};
+		\node [style=none] (7) at (6, 5.75) {};
+		\node [style=none] (8) at (-9, 4) {};
+		\node [style=none] (9) at (-9, 6) {$X^{\ast}$};
+		\node [style=none] (10) at (-6, 4.5) {};
+		\node [style=none] (11) at (-2.5, 5.5) {};
+		\node [style=none] (12) at (-9, 1.25) {$X(0)$};
+		\node [style=none] (13) at (7, -1) {$t$};
+		\node [style=none] (14) at (-8, -0.5) {$0$};
+		\node [style=none] (15) at (-8.5, 7.5) {$X(t)$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=black arrow] (0.center) to (1.center);
+		\draw [style=black arrow] (3.center) to (2.center);
+		\draw [style=grey dashed] (5.center) to (6.center);
+		\draw [style=green edge, bend left=15] (4.center) to (10.center);
+		\draw [style=green edge, bend left=15] (10.center) to (11.center);
+		\draw [style=green edge] (11.center) to (7.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

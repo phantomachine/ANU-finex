@@ -1,0 +1,45 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-8, 7) {};
+		\node [style=none] (1) at (-8, -7) {};
+		\node [style=none] (2) at (10, -7) {};
+		\node [style=none] (3) at (-9, 7) {$c$};
+		\node [style=none] (4) at (10, -7.75) {$k$};
+		\node [style=none] (5) at (0.25, 2.5) {};
+		\node [style=none] (6) at (9, -7) {};
+		\node [style=none] (13) at (0.25, -7) {};
+		\node [style=none] (16) at (0.25, -7.75) {};
+		\node [style=none] (17) at (0.25, -7.75) {};
+		\node [style=none] (18) at (0.25, -7.75) {$k_{\text{gold}}$};
+		\node [style=none] (21) at (3, -3) {};
+		\node [style=none] (23) at (9.5, -3.5) {$N_{k} (\dot{k}=0)$};
+		\node [style=none] (24) at (-4, 4) {};
+		\node [style=none] (27) at (3.5, 5.25) {};
+		\node [style=none] (28) at (1, 5.25) {};
+		\node [style=none] (29) at (-4, 4) {};
+		\node [style=none] (30) at (-5, 4) {};
+		\node [style=none] (31) at (-5, -3) {};
+		\node [style=none] (32) at (-6, -3) {};
+		\node [style=none] (33) at (3, -3) {};
+		\node [style=none] (34) at (4.75, -3) {};
+		\node [style=none] (35) at (7.75, -0.5) {};
+		\node [style=none] (36) at (7, -0.5) {};
+		\node [style=none] (53) at (-8.5, -7.5) {};
+		\node [style=none] (54) at (-8.5, -7.5) {$0$};
+		\node [style=none] (55) at (9, -7.5) {$\bar{k}$};
+		\node [style=none] (66) at (7.75, -0.5) {};
+		\node [style=none] (72) at (12.75, -2.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=black arrow] (1.center) to (0.center);
+		\draw [style=black arrow] (1.center) to (2.center);
+		\draw [style=black edge, bend left=45] (1.center) to (5.center);
+		\draw [style=black edge, bend left=45] (5.center) to (6.center);
+		\draw [style=orange dashed] (5.center) to (13.center);
+		\draw [style=black arrow] (27.center) to (28.center);
+		\draw [style=black arrow] (35.center) to (36.center);
+		\draw [style=black arrow] (29.center) to (30.center);
+		\draw [style=black arrow] (32.center) to (31.center);
+		\draw [style=black arrow] (33.center) to (34.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
