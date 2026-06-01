@@ -1,9 +1,35 @@
 % \thispagestyle{empty}
 
-%% ID number boxes ---------------------------------------------------------
+%% ==================================================================
+%%
+%% COVER PAGE TEMPLATE for ANU Final Exams
+%%
+%% ==================================================================
+
+%%% Header and Footer format=========================================
+\pagestyle{fancy}
+
+\lhead{}
+\chead{}
+% \rhead{\PointingHand \ Your ANU-ID: u\boxed{\color{white}ABC7778eroih59-} }
+\lfoot{\footnotesize{\sffamily \semester - \semtype, \examdate}}
+\cfoot{\footnotesize{\sffamily Page \thepage \ of \pageref{finalpage}}}
+\rfoot{\footnotesize{\sffamily \examcode \ \titlehd}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\lastwords}{End of \examtype}
+
+% Marks distribution:
+\newenvironment{markdist}[2][]{\hfill$\langle$ \textbf{#2}\textbf{\%} $\rangle$ }
+
+% Flushed left
+\newenvironment{markdistfleft}[2][]{ $\langle$ \textbf{#2}\textbf{\%} $\rangle$\hfill }
+%%% END: Header and Footer format ===================================
+
+%% ID number boxes --------------------------------------------------
 \def\us{\underline{\hspace{0.5cm}}}
 \def\ANUidboxes{$|$\us$|$\us$|$\us$|$\us$|$\us $|$\us$|$\us$|$\us$|$}
-%% -------------------------------------------------------------------------
+%% ------------------------------------------------------------------
 
 %% ANU Logo and student information --------------------------
 \begin{flushleft}

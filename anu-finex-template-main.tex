@@ -14,34 +14,22 @@
 %%  http://www.ctan.org/tex-archive/help/Catalogue/entries/anufinalexam.html 
 %% (now obsolete)
 
-%% FONTS for Access and Inclusivity =========================================
-    %% Arial is not installed in TeX Live. Use helvet package instead.
-    \usepackage{helvet}
-
-    \renewcommand{\familydefault}{\sfdefault}
-
-    %% Use sans serif math font as well
-    %% (not very good, but better than default)
-    \usepackage[cm]{sfmath}                  
-%% FONTS for Access and Inclusivity =========================================
-
 %% USER OPTION - Set as TRUE to render marking scheme and model answers. 
 \usepackage{xifthen}
 \newboolean{answer}
 \setboolean{answer}{false}
 
-%% Included packages
-\input{anu-exam-settings}
+% Arial-like EAP (access/inclusion) fonts
+\newboolean{arialfonts}
+\setboolean{arialfonts}{true}
 
-
-
-%%% USER DEFINED MACROS AND ENVIRONMENTS ==============================
+%% USER DEFINED: Course and Examination Paper Info ========================
     \newcommand{\institution}{THE AUSTRALIAN NATIONAL UNIVERSITY}
-    \newcommand{\department}{Research School of Photography}
+    \newcommand{\department}{Research School of Economics}
 
     %% Course details
-    \newcommand{\examcode}{FOTO 7788}
-    \newcommand{\titlehd}{Professorial Photography}
+    \newcommand{\examcode}{ECON 2102}
+    \newcommand{\titlehd}{Macroeconomics 2}
 
     %% Exam details
     \newcommand{\examtype}{Final Examination}
@@ -49,11 +37,11 @@
     \newcommand{\semtype}{End of Semester}
     \newcommand{\examdate}{2026}
     \newcommand{\readtime}{15 Minutes}
-    \newcommand{\writetime}{480 Minutes}
+    \newcommand{\writetime}{120 Minutes}
 
     %% Permitted materials:
     \newcommand{\materialA}{NONE Permitted!}
-    \newcommand{\materialB}{}
+    \newcommand{\materialB}{} % optional expansion slots
     \newcommand{\materialC}{}
 
     % Exam-hall supplied materials:
@@ -70,27 +58,27 @@
             \item Do not remove this document from the examination hall.
         \end{itemize}
     }
-%%% END: USER DEFINED MACROS AND ENVIRONMENTS =============================
+%% END: USER DEFINED ======================================================
 
-%%% STANDARD EXAM LAYOUT ==================================================
-    \pagestyle{fancy}
+
+    %% FONTS for Access and Inclusivity =======================================
+    %%
+    %% SET `arialfonts` to TRUE to use Arial-like fonts for better readability 
+    %% and accessibility.
+        \ifthenelse{\boolean{arialfonts}}{
+            %% Arial is not installed in TeX Live. Use helvet package instead.
+            \usepackage{helvet}
+            \renewcommand{\familydefault}{\sfdefault}
+            %% Use sans serif math font as well
+            %% (not very good, but better than default)
+            \usepackage[cm]{sfmath}                  
+        }{}                
+    %% FONTS for Access and Inclusivity =======================================
+
+    %% Included packages - you can add more packages here if you need them
+    \usepackage{anu-exam-settings}
+
     
-    \lhead{}
-    \chead{}
-    % \rhead{\PointingHand \ Your ANU-ID: u\boxed{\color{white}ABC7778eroih59-} }
-    \lfoot{\footnotesize{\sffamily \semester - \semtype, \examdate}}
-    \cfoot{\footnotesize{\sffamily Page \thepage \ of \pageref{finalpage}}}
-    \rfoot{\footnotesize{\sffamily \examcode \ \titlehd}}
-    \renewcommand{\headrulewidth}{0pt}
-    \renewcommand{\footrulewidth}{0pt}
-    \newcommand{\lastwords}{End of \examtype}
-
-    % Marks distribution:
-    \newenvironment{markdist}[2][]{\hfill$\langle$ \textbf{#2}\textbf{\%} $\rangle$ }
-
-    % Flushed left
-    \newenvironment{markdistfleft}[2][]{ $\langle$ \textbf{#2}\textbf{\%} $\rangle$\hfill }
-%%% END: STANDARD EXAM LAYOUT ===============================================
 
 
 \begin{document}
