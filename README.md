@@ -6,7 +6,7 @@ Final Examination template for ANU Final Examination papers.
    * Users can further customize this.
 * The design for the ANU-defined exam cover page is in `coverpage.tex`.
    * This is hardcoded, so users don't need to do anything here. 
-* This file is invoked in the preamble of the `main` exam paper file.
+* These two files are invoked in the preamble of the `main` exam paper file.
    * See example in `anu-finex-template-main.tex`.
 * Individual questions are recommended to be written as modular files.
    * See examples stored in `questions/`.
